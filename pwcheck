@@ -1,0 +1,58 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Natsuhi Shimada
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+import re
+
+
+weak_passwords = ["password", "1234", "asd", "1111", "picture1", "aaa"]
+def check_strength(pw):
+    score = 0
+    issues = []
+
+    if len(pw) >= 8:
+        score += 1
+    else:
+        issues.append("8文字未満です")
+
+    if re.search(r"[a-z]", pw):
+        score += 1
+    else:
+        issues.append("小文字が含まれていません")
+
+    if re.search(r"[A-Z]", pw):
+        score += 1
+    else:
+        issues.append("大文字が含まれていません")
+
+    if re.search(r"\d", pw):
+        score += 1
+    else:
+        issues.append("数字が含まれていません")
+
+    if re.search(r"[^A-Za-z0-9]", pw):
+        score += 1
+    else:
+        issues.append("記号が含まれていません")
+
+    if any(w in pw.lower() for w in weak_passwords):
+        issues.append("よくある弱い単語が含まれています")
+
+    return score, issues
+
+for line in sys.stdin:
+    pw = line.strip()
+    score, issues = check_strength(pw)
+
+    print(f"強度スコア: {score}/5")
+
+    if issues:
+        print("問題点:")
+        for i in issues:
+            print(" -", i)
+    else:
+            print("強いパスワードです") 
+    
+    print()
+
