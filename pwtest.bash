@@ -11,7 +11,7 @@ res=0
 
 ### NORMAL INPUT ###
 out=$(echo "Aa1!abcd" | ./pwcheck)
-echo "$out" | grep -q "強度スコア: 5/5" || ng "$LINENO"
+echo "$out" | grep -q "^5/5" || ng "$LINENO"
 
 ### WEAK INPUT ###
 out=$(echo "abc" | ./pwcheck)
@@ -19,7 +19,8 @@ echo "$out" | grep -q "問題点" || ng "$LINENO"
 
 ### EMPTY INPUT ###
 out=$(echo "" | ./pwcheck)
-echo "$out" | grep -q "強度スコア:" || ng "$LINENO"
+[ "$?" = 1 ] || ng "$LINENO"
+[ "$out" = "" ] || ng "$LINENO"
 
 ### WEAK WORD INPUT ###
 out=$(echo "Password123!" | ./pwcheck)
