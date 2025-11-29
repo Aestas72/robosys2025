@@ -7,6 +7,7 @@ import re
 
 
 weak_passwords = ["password", "1234", "asd", "1111", "picture1", "aaa"]
+
 def check_strength(pw):
     score = 0
     issues = []
@@ -14,7 +15,7 @@ def check_strength(pw):
     if len(pw) >= 8:
         score += 1
     else:
-        issues.append("8文字未満です")
+        issues.append("8文字未満")
 
     if re.search(r"[a-z]", pw):
         score += 1
@@ -41,18 +42,28 @@ def check_strength(pw):
 
     return score, issues
 
+first_input = True
 for line in sys.stdin:
     pw = line.strip()
+
+    if pw == "":
+        print("エラー: 空の入力は無効です", file=sys.stderr)
+        sys.exit(1)
+
+    if pw == "" and not first_input:
+        print("エラー: 空の入力は無効です", file=sys.stderr)
+        sys.exit(1)
+
+    first_input = False
+
     score, issues = check_strength(pw)
 
-    print(f"強度スコア: {score}/5")
+    print(f"{score}/5")
 
     if issues:
-        print("問題点:")
+        prinr("問題点:")
         for i in issues:
             print(" -", i)
-    else:
-            print("強いパスワードです") 
     
     print()
 
