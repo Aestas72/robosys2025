@@ -70,6 +70,7 @@ GitHub Actions の test.yml により Python 3.7〜3.12 で自動実行されま
 
 ##  テスト環境
 -Ubuntu 22.04.1
+
 -GitHub Actions（ubuntu-latest）
 
 ##  権利関係・ライセンス
