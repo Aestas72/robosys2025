@@ -60,9 +60,12 @@ GitHub Actions の test.yml により Python 3.7〜3.12 で自動実行されま
 
 ##  必要なソフトウェア
 -Python本ソフトウェアは Python 標準ライブラリ（sys, re）を使用しています。
+
 これらは Python ソフトウェア財団ライセンス（PSF License）の下で提供されています。
-  -テスト済みバージョン: 3.7〜3.12
+   -テスト済みバージョン: 3.7〜3.12
+
 -bash
+
 -Ubuntu（GitHub Actions: ubuntu-latest）
 
 ##  テスト環境
