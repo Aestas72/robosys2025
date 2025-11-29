@@ -9,22 +9,24 @@
 
 ---
 
-## 🔧 インストール方法
+##  インストール方法
 
 ```bash
 $ git clone https://github.com/USERNAME/robosys2025.git
 $ cd robosys2025
 $ chmod +x pwcheck
 
-▶ 使い方
+```
+
+##  使い方
 
 パスワードは 標準入力から受け取ります。
 
-✔ 強度の高い例
+・強度の高い例
 $ echo "Aa1!abcd" | ./pwcheck
 5/5
 
-✔ 問題点がある例
+・問題点がある例
 $ echo "abc" | ./pwcheck
 1/5
 問題点:
@@ -34,7 +36,7 @@ $ echo "abc" | ./pwcheck
  - 数字が含まれていません
  - 記号が含まれていません
 
-✔ 空入力はエラー（標準エラー出力）
+・空入力はエラー（標準エラー出力）
 $ echo "" | ./pwcheck
 エラー: 空の入力は無効です
 
