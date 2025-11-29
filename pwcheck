@@ -61,7 +61,7 @@ for line in sys.stdin:
     print(f"{score}/5")
 
     if issues:
-        prinr("問題点:")
+        print("問題点:")
         for i in issues:
             print(" -", i)
     
