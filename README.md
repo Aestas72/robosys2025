@@ -22,6 +22,7 @@ $ chmod +x pwcheck
 
 パスワードは 標準入力から受け取ります。
 
+```bash
 ・強度の高い例
 $ echo "Aa1!abcd" | ./pwcheck
 5/5
@@ -39,6 +40,7 @@ $ echo "abc" | ./pwcheck
 ・空入力はエラー（標準エラー出力）
 $ echo "" | ./pwcheck
 エラー: 空の入力は無効です
+```
 
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
 - © 2025 Natsuhi Shimada
