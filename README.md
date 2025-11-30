@@ -54,26 +54,26 @@ $ echo '' | ./pwcheck
 $ bash ./pwtest.bash
 ```
 テスト内容（概要）：
--強いパスワード → 5/5 が出る
--弱いパスワード → 問題点が表示される
--空入力 → エラー終了（標準エラー出力 + 終了コード 1）
--弱い単語（password など）を含む場合 → 警告が出る
+- 強いパスワード → 5/5 が出る
+- 弱いパスワード → 問題点が表示される
+- 空入力 → エラー終了（標準エラー出力 + 終了コード 1）
+- 弱い単語（password など）を含む場合 → 警告が出る  
 GitHub Actions の pwtest.yml により Python 3.7〜3.12 で自動実行されます。
 
 
 ##  必要なソフトウェア
 Python
--使用している標準ライブラリ：sys, re（PSF License）
--テスト済みバージョン：3.7〜3.12
+  - 使用している標準ライブラリ：sys, re（PSF License）
+  - テスト済みバージョン：3.7〜3.12
 
--bash
+- bash
 
--Ubuntu（GitHub Actions: ubuntu-latest）
+- Ubuntu（GitHub Actions: ubuntu-latest）
 
 ##  テスト環境
--Ubuntu 22.04.1
+- Ubuntu 22.04.1
 
--GitHub Actions（ubuntu-latest）
+- GitHub Actions（ubuntu-latest）
 
 ##  権利関係・ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
