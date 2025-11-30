@@ -1,5 +1,5 @@
 # pwcheck — パスワード強度チェッカー
-![test](https://github.com/Aestas72/robosys2025/actions/workflows/test.yml/badge.svg)
+![test](https://github.com/Aestas72/robosys2025/actions/workflows/pwtest.yml/badge.svg)
 
 `pwcheck` は、標準入力から受け取った文字列をパスワードとして評価し、  
 安全性を 5 段階で判定するコマンドです。
@@ -52,6 +52,7 @@ $ echo "" | ./pwcheck
 
 ```bash
 $ bash ./pwtest.bash
+```
 テスト内容（概要）：
 強いパスワード → 5/5 が出る
 弱いパスワード → 問題点が表示される
@@ -59,7 +60,6 @@ $ bash ./pwtest.bash
 弱い単語（password など）を含む場合 → 警告が出る
 GitHub Actions の test.yml により Python 3.7〜3.12 で自動実行されます。
 
-```
 
 ##  必要なソフトウェア
 -Python本ソフトウェアは Python 標準ライブラリ（sys, re）を使用しています。
