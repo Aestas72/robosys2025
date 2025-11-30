@@ -9,4 +9,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: pwcheck test
-      run: bash -xv ./test.bash
+      run: bash -xv ./pwtest.bash
