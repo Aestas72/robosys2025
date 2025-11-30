@@ -57,13 +57,14 @@ $ bash ./pwtest.bash
 - 強いパスワード → 5/5 が出る
 - 弱いパスワード → 問題点が表示される
 - 空入力 → エラー終了（標準エラー出力 + 終了コード 1）
-- 弱い単語（password など）を含む場合 → 警告が出る  
+- 弱い単語（password など）を含む場合 → 警告が出る
+
 GitHub Actions の pwtest.yml により Python 3.7〜3.12 で自動実行されます。
 
 
 ##  必要なソフトウェア
 - Python  
-    使用している標準ライブラリ：sys, re（PSF License）
+    使用している標準ライブラリ：sys, re(PSF License)  
     テスト済みバージョン：3.7〜3.12
 
 - bash
@@ -87,7 +88,7 @@ GitHub Actions の pwtest.yml により Python 3.7〜3.12 で自動実行され�
 
 ## 謝辞
 このプログラムの作成にあたり、以下の講義スライドの考え方を参考にしました。
-- [robosys2025（CC-BY-SA 4.0 by Ryuichi Ueda）](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)
+- [robosys2025（CC-BY-SA 4.0 by Ryuichi Ueda）](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)  
 スライドを参考にしていますが、コードおよび README の文章は自分で作成したものです。
 
 
