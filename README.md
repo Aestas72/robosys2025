@@ -24,13 +24,13 @@ $ chmod +x pwcheck
 
 ・強度の高い例
 ```bash
-$ echo "Aa1!abcd" | ./pwcheck
+$ echo 'Aa1!abcd' | ./pwcheck
 5/5
 ```
 
 ・問題点がある例
 ```bash
-$ echo "abc" | ./pwcheck
+$ echo 'abc' | ./pwcheck
 1/5
 問題点:
  - 8文字未満
@@ -42,7 +42,7 @@ $ echo "abc" | ./pwcheck
 
 ・空入力はエラー（標準エラー出力）
 ```bash
-$ echo "" | ./pwcheck
+$ echo '' | ./pwcheck
 エラー: 空の入力は無効です
 ```
 
@@ -52,14 +52,13 @@ $ echo "" | ./pwcheck
 
 ```bash
 $ bash ./pwtest.bash
-```
 テスト内容（概要）：
 強いパスワード → 5/5 が出る
 弱いパスワード → 問題点が表示される
 空入力 → エラー終了（標準エラー出力 + 終了コード 1）
 弱い単語（password など）を含む場合 → 警告が出る
 GitHub Actions の test.yml により Python 3.7〜3.12 で自動実行されます。
-
+```
 
 ##  必要なソフトウェア
 -Python本ソフトウェアは Python 標準ライブラリ（sys, re）を使用しています。
