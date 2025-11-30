@@ -11,11 +11,24 @@
 
 ##  インストール方法
 
+1,リポジトリをクローン
 ```bash
 $ git clone https://github.com/USERNAME/robosys2025.git
-$ cd robosys2025
-$ chmod +x pwcheck
+```
 
+2,ディレクトリ移動
+```bash
+$ cd robosys2025
+```
+
+3,実行権限を付与
+```bash
+$ chmod +x pwcheck
+```
+
+4,コマンドのテスト(任意)
+```bash
+$ bash ./pwtest.bash
 ```
 
 ##  使い方
