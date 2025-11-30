@@ -62,9 +62,9 @@ GitHub Actions の pwtest.yml により Python 3.7〜3.12 で自動実行され�
 
 
 ##  必要なソフトウェア
-Python
-  - 使用している標準ライブラリ：sys, re（PSF License）
-  - テスト済みバージョン：3.7〜3.12
+- Python  
+    使用している標準ライブラリ：sys, re（PSF License）
+    テスト済みバージョン：3.7〜3.12
 
 - bash
 
@@ -77,6 +77,11 @@ Python
 
 ##  権利関係・ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
+- 本ソフトウェアは **Python 標準ライブラリ**（`sys`, `re`）を利用しています。  
+  これらは **PSF License（Python Software Foundation License）** の下で提供されています。
+- 以下の講義スライドの内容・考え方を参考にしていますが、  
+  コードおよび README の文章は自身で作成したものです。  
+  - [robosys2025（CC-BY-SA 4.0 by Ryuichi Ueda）](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)
 - © 2025 Natsuhi Shimada
 
 
