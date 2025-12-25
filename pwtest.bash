@@ -40,7 +40,7 @@ echo "$out" | grep -q "弱い単語" || ng "$LINENO"
 # SYMBOL ONLY
 ####################
 out=$(echo "!!!!!!!!" | ./pwcheck)
-echo "$out" | grep -q "^1$" || ng "$LINENO"
+echo "$out" | grep -q "^2$" || ng "$LINENO"
 echo "$out" | grep -q "小文字が含まれていません" || ng "$LINENO"
 
 ####################
