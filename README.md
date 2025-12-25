@@ -87,6 +87,6 @@ $ echo 'Password123!' | ./pwcheck
 ## 謝辞
 このプログラムの作成にあたり、以下の講義スライドの考え方を参考にしました。
 - [robosys2025（CC-BY-SA 4.0 by Ryuichi Ueda）](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)  
-スライドを参考にしていますが、コードおよびREADMEの文章は自分で作成したものです。
+スライドを参考にしましたが、コードおよびREADMEの文章は自分で作成したものです。
 
 
