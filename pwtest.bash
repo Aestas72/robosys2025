@@ -11,7 +11,7 @@ res=0
 
 ### NORMAL INPUT ###
 out=$(echo "Aa1!abcd" | ./pwcheck)
-echo "$out" | grep -q "^5/5" || ng "$LINENO"
+echo "$out" | grep -q "^5$" || ng "$LINENO"
 
 ### WEAK INPUT ###
 out=$(echo "abc" | ./pwcheck)
