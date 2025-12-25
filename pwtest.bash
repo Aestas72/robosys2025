@@ -3,30 +3,85 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 ng () {
-       echo "${1}行目が違うよ"
-       res=1
+    echo "${1}行目が違うよ"
+    res=1
 }
 
 res=0
 
-### NORMAL INPUT ###
+####################
+# NORMAL INPUT
+####################
 out=$(echo "Aa1!abcd" | ./pwcheck)
 echo "$out" | grep -q "^5$" || ng "$LINENO"
 
-### WEAK INPUT ###
+####################
+# WEAK INPUT
+####################
 out=$(echo "abc" | ./pwcheck)
+echo "$out" | grep -q "^1$" || ng "$LINENO"
 echo "$out" | grep -q "問題点" || ng "$LINENO"
 
-### EMPTY INPUT ###
+####################
+# EMPTY INPUT
+####################
 out=$(echo "" | ./pwcheck)
 [ "$?" = 1 ] || ng "$LINENO"
 [ "$out" = "" ] || ng "$LINENO"
 
-### WEAK WORD INPUT ###
+####################
+# WEAK WORD INPUT
+####################
 out=$(echo "Password123!" | ./pwcheck)
+echo "$out" | grep -q "^5$" || ng "$LINENO"
 echo "$out" | grep -q "弱い単語" || ng "$LINENO"
 
+####################
+# SYMBOL ONLY
+####################
+out=$(echo "!!!!!!!!" | ./pwcheck)
+echo "$out" | grep -q "^1$" || ng "$LINENO"
+echo "$out" | grep -q "小文字が含まれていません" || ng "$LINENO"
+
+####################
+# JAPANESE INPUT (unexpected multibyte)
+####################
+out=$(echo "あいうえお" | ./pwcheck)
+echo "$out" | grep -q "^1$" || ng "$LINENO"
+
+####################
+# SPACE INCLUDED
+####################
+out=$(echo "Aa1 abcd!" | ./pwcheck)
+echo "$out" | grep -q "^5$" || ng "$LINENO"
+
+####################
+# BOUNDARY LENGTH (exactly 8 chars)
+####################
+out=$(echo "Aa1!abcd" | ./pwcheck)
+echo "$out" | grep -q "^5$" || ng "$LINENO"
+
+####################
+# DIGIT ONLY
+####################
+out=$(echo "12345678" | ./pwcheck)
+echo "$out" | grep -q "^2$" || ng "$LINENO"
+
+####################
+# ALPHABET ONLY
+####################
+out=$(echo "ABCDEFGH" | ./pwcheck)
+echo "$out" | grep -q "^2$" || ng "$LINENO"
+
+####################
+# VERY LONG INPUT
+####################
+out=$(printf 'Aa1!%.0s' {1..1000} | ./pwcheck)
+echo "$out" | grep -q "^5$" || ng "$LINENO"
+
+####################
+# RESULT
+####################
 [ "$res" = 0 ] && echo OK
 exit $res
-
 
