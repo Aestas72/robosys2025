@@ -79,14 +79,9 @@ $ echo 'Password123!' | ./pwcheck
 
 ##  権利関係・ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されています。
-- 本ソフトウェアは**Python 標準ライブラリ**(`sys`, `re`)を利用しています。
-  これらは**PSF License(Python Software Foundation License)** の下で提供されています。
 - © 2025 Natsuhi Shimada
 
 
 ## 謝辞
 このプログラムの作成にあたり、以下の講義スライドの考え方を参考にしました。
-- [robosys2025（CC-BY-SA 4.0 by Ryuichi Ueda）](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)  
-スライドを参考にしましたが、コードおよびREADMEの文章は自分で作成したものです。
-
-
+- [robosys2025（CC-BY-SA 4.0 by Ryuichi Ueda）](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)

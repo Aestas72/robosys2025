@@ -58,10 +58,10 @@ for line in sys.stdin:
 
     score, issues = check_strength(pw)
 
-    print(f"{score}")
+    print(score)
 
     if issues:
-        print("問題点:")
+        print("問題点:", file=sys.stderr)
         for i in issues:
-            print(" -", i)
+            print(f" - {i}", file=sys.stderr)
 

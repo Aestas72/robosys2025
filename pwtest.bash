@@ -19,29 +19,37 @@ echo "$out" | grep -q "^5$" || ng "$LINENO"
 # WEAK INPUT
 ####################
 out=$(echo "abc" | ./pwcheck)
+err=$(echo "abc" | ./pwcheck 2>&1 >/dev/null)
+
 echo "$out" | grep -q "^1$" || ng "$LINENO"
-echo "$out" | grep -q "問題点" || ng "$LINENO"
+echo "$err" | grep -q "問題点" || ng "$LINENO"
 
 ####################
 # EMPTY INPUT
 ####################
 out=$(echo "" | ./pwcheck)
-[ "$?" = 1 ] || ng "$LINENO"
+status=$?
+
+[ "$status" = 1 ] || ng "$LINENO"
 [ "$out" = "" ] || ng "$LINENO"
 
 ####################
 # WEAK WORD INPUT
 ####################
 out=$(echo "Password123!" | ./pwcheck)
+err=$(echo "Password123!" | ./pwcheck 2>&1 >/dev/null)
+
 echo "$out" | grep -q "^5$" || ng "$LINENO"
-echo "$out" | grep -q "弱い単語" || ng "$LINENO"
+echo "$err" | grep -q "弱い単語" || ng "$LINENO"
 
 ####################
 # SYMBOL ONLY
 ####################
 out=$(echo "!!!!!!!!" | ./pwcheck)
+err=$(echo "!!!!!!!!" | ./pwcheck 2>&1 >/dev/null)
+
 echo "$out" | grep -q "^2$" || ng "$LINENO"
-echo "$out" | grep -q "小文字が含まれていません" || ng "$LINENO"
+echo "$err" | grep -q "小文字が含まれていません" || ng "$LINENO"
 
 ####################
 # JAPANESE INPUT (unexpected multibyte)
